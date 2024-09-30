@@ -1,0 +1,65 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* App container */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the app takes full screen height */
+}
+
+/* Header styling */
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+/* Movie list styling */
+.movie-list, .liked-movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.movie-list > div, .liked-movies > div {
+  margin: 10px;
+}
+
+
+/* Styling for individual movie items */
+.movie-list div, .liked-movies div {
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  border-radius: 8px;
+}
+
+/* Button styles (if needed for header/footer) */
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
