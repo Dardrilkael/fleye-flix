@@ -19,7 +19,7 @@ exports.LikedMoviesModule = LikedMoviesModule = __decorate([
     (0, common_1.Module)({
         controllers: [liked_movies_controller_1.LikedMoviesController],
         providers: [liked_movies_service_1.LikedMoviesService],
-        imports: [mongoose_1.MongooseModule.forRoot('mongodb+srv://gabrielfonsecabarreto:sampleword@cluster0.iptjm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'),
+        imports: [mongoose_1.MongooseModule.forRoot(process.env.DATABASE_URL),
             mongoose_1.MongooseModule.forFeature([{ name: 'Movie', schema: movie_schema_1.MovieSchema }]),
         ],
     })

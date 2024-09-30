@@ -7,7 +7,7 @@ import { MovieSchema } from './schemas/movie.schema';
 @Module({
   controllers: [LikedMoviesController],
   providers: [LikedMoviesService],
-  imports: [MongooseModule.forRoot('mongodb+srv://gabrielfonsecabarreto:sampleword@cluster0.iptjm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'),
+  imports: [MongooseModule.forRoot(process.env.DATABASE_URL),
     MongooseModule.forFeature([{ name: 'Movie', schema: MovieSchema }]),
   ],
 })
