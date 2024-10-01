@@ -14,17 +14,21 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [movies, setMovies] = useState([]);
   const [likedMovies, setLikedMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [currentState, setCurrentState] = useState("inicio");
 
   const handleSearch = async (e) => {
     try {
+      setIsLoading(true);
       const response = await fetchMovies(searchTerm);
       console.log("The result is",response);
-  
+      
       setMovies(response.data.Search||response.data||{Error:"Not found"}); 
     } catch (error) {
       console.error("Error fetching movies:", error);
       setMovies([]);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -71,11 +75,12 @@ function App() {
     switch (currentState) {
       case "inicio":
         return (<Home  
+          movies={movies}
         searchTerm={searchTerm}
+        isLoading={isLoading}
         setSearchTerm={setSearchTerm}
         handleSearch={handleSearch}
         updateLocalLikedMovies={updateLocalLikedMovies}
-        movies={movies}
         checkIfLiked={checkIfLiked}
         handleFavoriteMovie={handleFavoriteMovie}
         clearSearch = {ClearSearch}
