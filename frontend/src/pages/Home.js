@@ -14,9 +14,12 @@ const Home = ({searchTerm,setSearchTerm,handleSearch,updateLocalLikedMovies,movi
             handleSearch={handleSearch}
             onPress={updateLocalLikedMovies}
           />
+          <div className="flex justify-center">
          <PrimaryButton 
+         className="w-auto px-4 py-2"
          label="Limpar"
          action={clearSearch}/>
+         </div>
           <div className="movie-list">
             {console.log(movies)}
             {movies.length > 0 ? (

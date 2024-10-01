@@ -30,14 +30,14 @@ DATABASE_URL='mongodb+srv://gabrielfonsecabarreto:sampleword@cluster0.iptjm.mong
 PORT=8080
 
 No diretório frontend, crie um arquivo .env e configure com sua chave da API do IMDb:
-REACT_APP_API_KEY=sua_chave_api
+REACT_APP_API_URL=http://localhost:8080
+
 
 Execute o servidor backend (NestJS):
 cd backend
 npm run start
 
 Execute o frontend (React):
-
 Start the project:
 cd ../frontend
 npm start
