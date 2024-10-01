@@ -20,8 +20,8 @@ function App() {
     try {
       const response = await fetchMovies(searchTerm);
       console.log("The result is",response);
-      if(response.data.Search)
-      setMovies(response.data.Search||{Response:"False"}); 
+  
+      setMovies(response.data.Search||response.data||{Error:"Not found"}); 
     } catch (error) {
       console.error("Error fetching movies:", error);
       setMovies([]);

@@ -1,5 +1,5 @@
 import React from "react";
-
+import blankPoster from "../../assets/blank.png"
 import { useMovieCard } from "./controller"
 import {FavoriteButton, LikeButton} from "../../common"
 export const MovieCard = (props)=>{
@@ -15,6 +15,7 @@ export const MovieCard = (props)=>{
                 src={movie.Poster}
                 alt={movie.Title}
                 className="w-full h-auto rounded-t-3xl object-cover"
+                onError={(e) => { e.target.onerror = null; e.target.src = blankPoster; }}
             />
             <div className="p-4">
                 <h2 className="text-lg font-bold">{movie.Title}</h2>

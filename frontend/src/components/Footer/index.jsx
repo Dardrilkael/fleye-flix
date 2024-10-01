@@ -18,7 +18,7 @@ const Footer = ({ setState,clearSearch }) => {
        />
  
       </div>
-      <p className="mt-2">...</p>
+  
     </footer>
   );
 };
