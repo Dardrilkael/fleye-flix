@@ -35,7 +35,7 @@ const Home = ({
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Header title="Filmes Favoritos">
+      <Header title="Fleye Flix">
         <div className="hidden lg:flex justify-center">
           <SearchBar
             searchTerm={searchTerm}
@@ -69,7 +69,7 @@ const Home = ({
         {isLoading ? (
           renderLoading()
         ) : (
-          <div className="movie-list">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-24">
             <>
               {movies.Response === "False"
                 ? renderNotFound()

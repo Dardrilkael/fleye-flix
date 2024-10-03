@@ -1,19 +1,11 @@
-const PrimaryButton = ({ label, action }) => {
-  const baseClasses =
-    "border rounded-full inline-flex items-center justify-center py-3 px-7 text-center font-medium text-white";
-  const labelClasses = "text-xl"; // Adjust the font size here
-  const hoverClasses = "hover:bg-[#1B44C8] hover:border-[#1B44C8]";
-  const disabledClasses =
-    "disabled:bg-gray-3 disabled:border-gray-3 disabled:text-dark-5";
-  const activeClasses = "active:bg-[#1B44C8] active:border-[#1B44C8]";
+const BasicButton = ({ label, action }) => {
+
 
   return (
     <button
       onClick={action}
-      className={`bg-primary border-primary ${baseClasses} ${hoverClasses} ${disabledClasses} ${activeClasses}`}
-    >
-      <span className="mr-2">{/* Optionally, you can add an icon here */}</span>
-      <span className={labelClasses}>{label}</span>
+      className={"text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"}>
+      <span className={"text-xl"}>{label}</span>
     </button>
   );
 };
@@ -22,10 +14,9 @@ export const GhostButton = ({ label, action }) => {
 
   return (
     <button onClick={action}
-    class="flex items-center px-4 py-2 border-2 border-black text-black rounded-lg bg-transparent hover:bg-black hover:text-white transition-all duration-300 transform active:scale-95">
-
-      <span className="mr-2">{/* Optionally, you can add an icon here */}</span>
-      <span>{label}</span>
+    class="text-gray-800 bg-transparent hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-transparent dark:hover:bg-gray-700 dark:text-gray-300 dark:hover:text-white dark:focus:ring-gray-700 dark:border-gray-700"
+>
+      <span className ={"text-x0"}> {label}</span>
     </button>
   );
 };
@@ -114,4 +105,4 @@ const SearchBar = ({ searchTerm, setSearchTerm, handleSearch }) => {
 };
 export default SearchBar;
 
-export { PrimaryButton, LikeButton, SearchBar };
+export { BasicButton, LikeButton, SearchBar };
