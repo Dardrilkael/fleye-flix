@@ -26,12 +26,13 @@ const Home = ({
 
   const renderNotFound = () => {
     return (
-      <div>
-        <img className="mb-4" src={sadFace} />
+      <div className="flex flex-col items-center justify-center text-center">
+        <img className="mb-4" src={sadFace} alt="Sad Face" />
         <p>Nenhum Filme Encontrado</p>
       </div>
     );
   };
+  
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -60,29 +61,26 @@ const Home = ({
       </div>
 
       <div className="container mx-auto px-4 pt-10">
-        {!movies?.length && !movies?.Response && !isLoading ? (
+        {!movies.length && !movies?.Response && !isLoading ? (
           <p className="text-3xl font-bold text-center text-gray-800 mt-10">
             Bem Vindo
           </p>
         ) : null}
 
-        {isLoading ? (
+        {isLoading ? 
           renderLoading()
-        ) : (
+          : (movies.Response === "False"? renderNotFound():
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-24">
-            <>
-              {movies.Response === "False"
-                ? renderNotFound()
-                : movies?.map((movie, index) => (
+                 {movies?.map((movie, index) => (
                     <MovieCard
                       key={movie.imdbID}
                       movie={movie}
                       isInFavorites={checkIfLiked(movie)}
                       onButtonPress={handleFavoriteMovie}
                     />
-                  ))}
-            </>
-          </div>
+                 ))}
+                  </div>
+                
         )}
       </div>
     </div>
